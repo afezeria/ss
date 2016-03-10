@@ -67,7 +67,7 @@ import sys,os
 import logging
 import struct
 import errno
-import random
+import random,json
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
 from shadowsocks import encrypt, eventloop, lru_cache, common, shell
 from shadowsocks.common import parse_header, pack_addr
