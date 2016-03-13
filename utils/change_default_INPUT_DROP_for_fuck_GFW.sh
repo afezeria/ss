@@ -19,3 +19,8 @@ N2=$($iptables_bin -L INPUT -vn|egrep ESTABLISHED|egrep ACCEPT|wc -l)
 if [ $N2 -ne 1 ];then
 	$iptables_bin -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 fi
+
+N3=$($iptables_bin -L INPUT -vn|egrep  ACCEPT|egrep lo|wc -l)
+if [ $N3 -ne 1 ];then
+	$iptables_bin -I INPUT -i lo -j ACCEPT
+fi
