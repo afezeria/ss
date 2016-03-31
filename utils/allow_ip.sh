@@ -6,6 +6,7 @@ if [ $# -ne 1 ];then
 fi
 
 ip="$1"
+log="/tmp/allow_ip.log"
 
 N=$(iptables -t filter -L INPUT -vn|egrep -w "$ip"|egrep "ACCEPT"|wc -l)
 if [ $N -ge 1 ];then
@@ -14,5 +15,6 @@ else
     iptables -t filter  -I INPUT -s $ip -j ACCEPT
     if [ $? -eq 0 ];then
         echo -e "allowed [ $ip ]"
+        echo -e "[`date +%F_%H:%M:%S`] allowed ip [$ip]" >> $log
     fi
 fi
