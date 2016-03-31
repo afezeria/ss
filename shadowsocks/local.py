@@ -57,7 +57,8 @@ def main():
                 config['server_port'] = int(random.choice(config['port_password'].items())[0])
         else:
             config['server_port'] = int(random.choice(config['port_password'].items())[0])
-        config['password'] = common.to_str(config['port_password']["%s" % config['server_port']])
+        if not config['password'] or str(config['password']) == "":
+            config['password'] = common.to_str(config['port_password']["%s" % config['server_port']])
     else:
         if type(config['server_port']) == list and config['server_port']:
             config['server_port'] = random.choice(config.get('server_port', 8388))
