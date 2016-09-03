@@ -24,3 +24,5 @@ N3=$($iptables_bin -L INPUT -vn|egrep  ACCEPT|egrep lo|wc -l)
 if [ $N3 -ne 1 ];then
 	$iptables_bin -I INPUT -i lo -j ACCEPT
 fi
+
+iptables -L -vn > /usr/local/accept_ips
