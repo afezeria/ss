@@ -2,6 +2,7 @@
 
 #这个脚本的作用是取代添加更多的block china ip的规则
 
+allow_ip="/bin/ss/utils/allow_ip.sh"
 iptables_bin=$(which iptables)
 
 if [ -z $iptables_bin ];then
@@ -25,4 +26,8 @@ if [ $N3 -ne 1 ];then
 	$iptables_bin -I INPUT -i lo -j ACCEPT
 fi
 
+the_ip=$(nslookup aws1.publicvm.com|egrep Address|egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}"|head -1)
+$allow_ip $the_ip
+
+mv /usr/local/accept_ips /usr/local/accept_ips_`date +%F_%H:%M:%S`
 iptables -L -vn > /usr/local/accept_ips
