@@ -22,7 +22,7 @@ if [ $N2 -lt 1 ];then
 fi
 
 N3=$($iptables_bin -L INPUT -vn|egrep  ACCEPT|egrep lo|wc -l)
-if [ $N3 -ne 1 ];then
+if [ $N3 -lt 1 ];then
 	$iptables_bin -I INPUT -i lo -j ACCEPT
 fi
 
