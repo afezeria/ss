@@ -16,7 +16,7 @@ then
 fi
 if [ ! -d "${HISTORY_DIR}" ]
 then
-    sudp mkdir -p "${HISTORY_DIR}"
+    sudo mkdir -p "${HISTORY_DIR}"
     sudo chmod 777 "${HISTORY_DIR}"
 fi
 
