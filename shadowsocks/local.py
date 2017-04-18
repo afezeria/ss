@@ -23,14 +23,28 @@ import os
 import signal
 import time
 import random
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../'))
-os.chdir(os.path.dirname(__file__))
+from funcs import check_the_platform
+if check_the_platform() == "linux":
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.pardir))
+    sys.path.insert(0, os.path.dirname(__file__))
+    os.chdir(os.path.dirname(__file__))
+elif check_the_platform() == "win":
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.pardir))
+    sys.path.insert(0, os.path.dirname(__file__))
+    os.chdir(os.path.dirname(__file__))
+elif check_the_platform() == "mac":
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), os.pardir))
+    sys.path.insert(0, os.path.dirname(__file__))
+    os.chdir(os.path.dirname(__file__))
+else:
+    print("Sorry.. No platform defined..EXIT now")
+    sys.exit()
+
 import common
 import logging
 
 import shell, daemon, eventloop, tcprelay, udprelay, asyncdns
 #from shadowsocks import shell, daemon, eventloop, tcprelay, udprelay, asyncdns
-
 
 def main():
 
