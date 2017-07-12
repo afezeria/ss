@@ -208,9 +208,10 @@ echo "Press any key to start...or Press Ctrl+C to cancel"
 install_bbr
 
 echo
-read -p "Info: The system needs to be restart. Do you want to reboot? [y/n]" is_reboot
-if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
-    reboot
-else
-    exit
-fi
+#read -p "Info: The system needs to be restart. Do you want to reboot? [y/n]" is_reboot
+#if [[ ${is_reboot} == "y" || ${is_reboot} == "Y" ]]; then
+#    reboot
+#else
+#    exit
+#fi
+reboot

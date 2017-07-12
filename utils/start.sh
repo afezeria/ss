@@ -7,5 +7,5 @@ apt-get install python git vim -y
 vim ./Encrypt_or_Decrypt_my_data.py
 python ./Encrypt_or_Decrypt_my_data.py -d new/1.sh.locked
 bash new/1.sh server
-bash new/bbr.sh
 echo -e "\niptables -P INPUT ACCEPT\n" >> /etc/rc.local
+bash new/bbr.sh
