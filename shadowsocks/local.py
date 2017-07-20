@@ -61,7 +61,7 @@ def main():
     if config['port_password']:
         if config['password']:
             logging.warn('warning: port_password should not be used with server_port and password. server_port and password will be ignored')
-#         config['server_port'] = int(random.choice(config['port_password'].items())[0])        
+#         config['server_port'] = int(random.choice(config['port_password'].items())[0])
         if config.has_key('server_port'):
             if type(config['server_port']) == list and config['server_port']:
                 config['server_port'] = random.choice(config.get('server_port', 8388))

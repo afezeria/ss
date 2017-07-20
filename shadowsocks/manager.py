@@ -215,15 +215,15 @@ def test():
             'fast_open': False,
             'verbose': 2
         }
-        
-        
+
+
         manager = Manager(config)
         enc.append(manager)
         manager.run()
         t = threading.Thread(target=run_server)
         t.start()
         time.sleep(1)
-    
+
 
 
     manager = enc[0]

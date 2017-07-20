@@ -99,7 +99,7 @@ class KqueueLoop(object):
     def modify(self, fd, mode):
         self.unregister(fd)
         self.register(fd, mode)
-    
+
     def close(self):
         self._kqueue.close()
 
@@ -137,7 +137,7 @@ class SelectLoop(object):
     def modify(self, fd, mode):
         self.unregister(fd)
         self.register(fd, mode)
-        
+
     def close(self):
         pass
 

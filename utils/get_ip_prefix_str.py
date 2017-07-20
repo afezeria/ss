@@ -6,7 +6,7 @@ import sys,os
 def Usage():
     print "Usage:\n\t%s IP [1-3]" % sys.argv[0]
     sys.exit()
-    
+
 if len(sys.argv) != 3:
     Usage()
 

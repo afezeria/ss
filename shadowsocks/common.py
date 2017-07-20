@@ -125,7 +125,7 @@ def error_to_file(error_str,config):
         f = open("%s" % os.path.expanduser("~/ss.log"),'a+')
         f.write("==[ERROR]== [%s] %s\n" % (time.strftime("%Y-%m-%d %H:%M:%S"),str(error_str)))
         f.close()
-        
+
 
 def compat_ord(s):
     if type(s) == int:

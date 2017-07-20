@@ -150,6 +150,6 @@ def test_find_library():
         assert find_library('notexist', 'strcpy', 'libnotexist') is None
         assert find_library('c', 'symbol_not_exist', 'c') is None
         assert find_library(('notexist', 'c', 'crypto', 'eay32'), 'EVP_CipherUpdate', 'libc') is not None
-        
+
 if __name__ == '__main__':
     test_find_library()
