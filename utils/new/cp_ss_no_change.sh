@@ -14,5 +14,9 @@ else
         python /bin/Encrypt_or_Decrypt_my_data.py -d config.json.server.no_change.locked
         mv config.json.server.no_change config.json
     fi
+    cd /bin/ss_no_change/shadowsocks/crypto
+    if [ -f "openssl_default.py" ];then
+        cp openssl_default.py openssl.py
+    fi
 fi
 
